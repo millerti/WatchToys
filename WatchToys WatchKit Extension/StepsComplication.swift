@@ -93,23 +93,20 @@ func getStepsData(completion: @escaping (Double) -> Void) {
     {
         // This closure is the completion handler for the query
         (query, results, error) in
-        
-            // This sort of error display isn't fantastic, but let's return specific values when things go wrong
-            // since it's convenient (and unlikely to collide with actual step counts since real step counts tend to be whole numbers)
             if error != nil {
                 print(error.debugDescription)
-                completion(1.1) // error code 1.1 -- we got an error from HKStatisticsQuery
+                completion(0)
                 return
             }
             
             // The guard let keyword protects against nil since results is optional
             guard let results = results else {
-                completion(1.2) // error code 1.2 -- no results returned
+                completion(0)
                 return
             }
             
             guard let sum = results.sumQuantity() else {
-                completion(1.3) // error code 1.3 -- error when summing results, or perhaps sumQuantity returned nil
+                completion(0)
                 return
             }
             
