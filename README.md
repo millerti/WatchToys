@@ -3,7 +3,7 @@ Eventually, this will be a collection of complications for the Apple Watch. For 
 
 ## Steps Complication
 This is a simple complication that retrieves the number of steps the user has taken today from HealthKit and displays the count in a complication.
-You must authorize this app to access your HealthKit data (only your step count!), and you can do that with a convenient button in the application on the watch itself.
+You must authorize this app to access your HealthKit data (only your step count!), and you can do that with a convenient button in the application on the watch itself. To see real step data, you must install and run this app on a real Apple Watch.
 
 ### To Run
 Before you start, note that, when run in the Apple Watch simulators in Xcode, you will never see real or useful data in this complication (there is no mocked step data in the simulator).
