@@ -25,7 +25,7 @@ func stepsComplicationDescriptor () -> CLKComplicationDescriptor {
 
 func getStepsCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
     // This is the meat and potatoes of our complication: it returns the information that should be displayed at the current time.
-    // Ssince the only real thing we plan to do is to return the current step count according to HealthKit, it should remain relatively simple.
+    // Since the only real thing we plan to do is to return the current step count according to HealthKit, it should remain relatively simple.
     
     // Call this function in ComplicationController::getCurrentTimelineEntry for the complication with the relevant identifier.
     
