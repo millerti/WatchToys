@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    var model: WatchToysVM = WatchToysVM()
+    
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        VStack {
+            Text("WatchToys needs your permission to read Steps data from HealthKit.")
+                .padding()
+            Button("Authorize", action: model.AuthorizeStepsData)
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    var model: WatchToysVM
+    
     static var previews: some View {
         ContentView()
     }

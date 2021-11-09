@@ -20,6 +20,9 @@
 		42ACE4C627385517000CA808 /* WatchToysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACE4C527385517000CA808 /* WatchToysTests.swift */; };
 		42ACE4D027385517000CA808 /* WatchToysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACE4CF27385517000CA808 /* WatchToysUITests.swift */; };
 		42ACE4D227385517000CA808 /* WatchToysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACE4D127385517000CA808 /* WatchToysUITestsLaunchTests.swift */; };
+		42ACE4E7273856E1000CA808 /* StepsComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACE4E6273856E1000CA808 /* StepsComplication.swift */; };
+		42ACE4E9273860B4000CA808 /* WatchToysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ACE4E8273860B4000CA808 /* WatchToysController.swift */; };
+		42E10C4E27386F50007BA74D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E10C4D27386F50007BA74D /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,10 @@
 		42ACE4CB27385517000CA808 /* WatchToysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchToysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ACE4CF27385517000CA808 /* WatchToysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchToysUITests.swift; sourceTree = "<group>"; };
 		42ACE4D127385517000CA808 /* WatchToysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchToysUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		42ACE4E6273856E1000CA808 /* StepsComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsComplication.swift; sourceTree = "<group>"; };
+		42ACE4E8273860B4000CA808 /* WatchToysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchToysController.swift; sourceTree = "<group>"; };
+		42E10C4B27386F50007BA74D /* WatchToys WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchToys WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		42E10C4D27386F50007BA74D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E10C4E27386F50007BA74D /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +140,7 @@
 				42ACE4C427385517000CA808 /* WatchToysTests */,
 				42ACE4CE27385517000CA808 /* WatchToysUITests */,
 				42ACE49927385515000CA808 /* Products */,
+				42E10C4C27386F50007BA74D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,11 +167,14 @@
 		42ACE4AB27385516000CA808 /* WatchToys WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				42E10C4B27386F50007BA74D /* WatchToys WatchKit Extension.entitlements */,
 				42ACE4AC27385516000CA808 /* WatchToysApp.swift */,
 				42ACE4AE27385516000CA808 /* ContentView.swift */,
+				42ACE4E8273860B4000CA808 /* WatchToysController.swift */,
 				42ACE4B027385516000CA808 /* NotificationController.swift */,
 				42ACE4B227385516000CA808 /* NotificationView.swift */,
 				42ACE4B427385516000CA808 /* ComplicationController.swift */,
+				42ACE4E6273856E1000CA808 /* StepsComplication.swift */,
 				42ACE4B627385517000CA808 /* Assets.xcassets */,
 				42ACE4BB27385517000CA808 /* Info.plist */,
 				42ACE4BC27385517000CA808 /* PushNotificationPayload.apns */,
@@ -194,6 +206,14 @@
 				42ACE4D127385517000CA808 /* WatchToysUITestsLaunchTests.swift */,
 			);
 			path = WatchToysUITests;
+			sourceTree = "<group>";
+		};
+		42E10C4C27386F50007BA74D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42E10C4D27386F50007BA74D /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,9 +405,11 @@
 			files = (
 				42ACE4B127385516000CA808 /* NotificationController.swift in Sources */,
 				42ACE4AF27385516000CA808 /* ContentView.swift in Sources */,
+				42ACE4E9273860B4000CA808 /* WatchToysController.swift in Sources */,
 				42ACE4B527385516000CA808 /* ComplicationController.swift in Sources */,
 				42ACE4AD27385516000CA808 /* WatchToysApp.swift in Sources */,
 				42ACE4B327385516000CA808 /* NotificationView.swift in Sources */,
+				42ACE4E7273856E1000CA808 /* StepsComplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchToys WatchKit Extension/WatchToys WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchToys WatchKit Extension/Preview Content\"";
@@ -584,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WatchToys WatchKit Extension/WatchToys WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchToys WatchKit Extension/Preview Content\"";
